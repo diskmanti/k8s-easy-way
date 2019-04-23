@@ -6,6 +6,12 @@
     float: left;
 }
 
-.float.right {
+.float-right {
     float: right;
+}
+
+.float-center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;    
 }
