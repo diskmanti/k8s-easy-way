@@ -7,35 +7,123 @@
   <title>Big</title>
   <link href='big.css' rel='stylesheet' type='text/css' />
   <link href='highlight.css' rel='stylesheet' type='text/css' />
-  <link rel="stylesheet" href="./style.css">
+  <link href="animate.min.css" rel='stylesheet' type="text/css">
+  <link href="style.css" rel="stylesheet" type="text/css">
   <script src='big.js'></script>
   <script src='highlight.js'></script>
   <script>
     hljs.initHighlightingOnLoad();
   </script>
+  <title>Kubernetes - The Easy Way</title>
 </head>
 
 <body class='dark'>
 
-  <div> 
-    <img src="./img/kubernetes_logo_full.svg" alt=""> <br> 
+  <div>
+    <img src="./img/kubernetes_logo_full.svg" alt=""> <br>
     <i class="nobreak">The Easy Way</i> </div>
+  </div>
 
   <div>
     <div class="nobreak">KUBER... what?</div> <br>
-    <div class="nobreak">k[ubernete]s = k8s = helmsman = timonier &#x1F6E5; </div> <br>
-    <img src="./img/kubernetes_logo_border.svg"  alt="" style="width: 400px; height: auto;" class="float-center">
+    <div class="nobreak">k[ubernete]s = k8s = helmsman = timonier 🛳️</div> <br>
+    <img src="./img/kubernetes_logo_border.svg" alt="" style="width: 100px; height: auto;" class="float-center">
   </div>
 
   <div>
-    <ol>
-      <li>Projekt i lindur nga Google ne 2014</li>
+    <h3 class="align-center">Production-Grade Container Orchestration</h3>
+    <ul>
+      <li>Projekt i realizuar nga Google ne 2014</li>
       <li>I bazuar ne eksperiencat e Borg dhe Omega</li>
-      <li>I projektuar si nje nderthurje <em>loosely coupled</em> e shume komponenteve te qenderzuar ne levrimin, mirembajtjen dhe shkallezimin e workloads</li>
-    </ol>
+      <li>I projektuar si nje nderthurje <em>loosely coupled</em> e shume komponenteve te specializuar ne levrimin,
+        mirembajtjen dhe shkallezimin e workloads</li>
+    </ul>
   </div>
 
-  
+  <div>
+    <div>Abstracts away underlaying hardware</div> <br>
+    <div class="animated hinge delay-4s float-left">Nodes</div>
+    <div class="animated jackInTheBox delay-5s float float-right">Shared Pool</div>
+    <notes>
+      Shpjego qe ska me standalone servers po nje resource pool
+    </notes>
+  </div>
+
+  <div style="display: grid; grid-template-columns: auto auto;">
+    <div class="align-left">Pets (every operation is <em>customized</em> with care and love for the individual app)
+    </div>
+    <div class="align-right">Manage your applications like Cattle (<em>generic, bulk operations</em>)</div>
+  </div>
+
+  <div>
+    <div>Decouples Infra and Scaling</div>
+    <ul>
+      <li> <em>All Services</em> are natively Load Balanced </li>
+      <li>Scale Up and Down dinamically</li>
+      <li>Self-Healing and seamless update and rollback</li>
+    </ul>
+  </div>
+
+  <div>You (the admin) declares the
+    <em>desired states</em>, Kubernetes' main task is to make the
+    <em>desired state the actual state</em>.
+    <notes>
+      jep nje shembull per self healing, kur kerkon 3 instanca te dickaje gjithmone do te jene 3.
+      shpjego rreth deplyments
+    </notes>
+  </div>
+
+  <div>
+    <h1 class="nobreak">High Level Component Architecture</h1> <br>
+    <img src="./img/kubernetes-control-plane.png" alt="" style="width: auto; height: 700px;">
+    <notes>
+      shpjego diagramen dhe trego cdo komponenet. mos harro reconcillation loop
+    </notes>
+  </div>
+
+  <div>Key Concepts</div>
+
+  <div>
+    <div>Pods</div>
+    <ul>
+      <li>Elementi baze i k8s</li>
+      <li><em>Nje/Shume</em> containers qe share volumes, network namespace</li>
+      <li> <em>Ephemeral = Vdekshem</em> </li>
+    </ul>
+    <notes>
+      fun fact: pod eshte grumbullim balenash. trego me shume se cfare share
+    </notes>
+  </div>
+
+  <div>
+    <img src="./img/pod.png" alt="" style="width: auto; height: 900px;">
+    <notes>
+      shpjego rreth deployments qe jane shume pods qe komunikojne bashke. trego deployments strats
+    </notes>
+  </div>
+
+  <div>
+    <div>Services</div>
+    <ul>
+      <li>Metoda per te ndervepruar me Pods</li>
+      <li>Resource jetegjate</li>
+      <ul>
+        <li>Static Cluster IP</li>
+        <li>DNS name</li>
+      </ul>
+      <li><em>Jo Ephemeral = Pavdekshem</em></li>
+    </ul>
+  </div>
+
+  <div>
+    <img src="./img/svc.png" alt="" style="width: auto; height: 900px;">
+    <notes>shpjego rreth labels dhe si nderveprojne me services</notes>
+  </div>
+
+
+
+
+
 
 
 

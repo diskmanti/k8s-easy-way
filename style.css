@@ -1,3 +1,16 @@
+pre {
+    margin:0;
+    padding:0.2em;
+    background:#fff;
+    color:#000;
+    font-weight:normal;
+}
+
+pre em {
+    color :#000;
+    /* background-color:yellow; */
+}
+
 .nobreak {
     white-space: pre;
 }
@@ -15,3 +28,20 @@
     margin-left: auto;
     margin-right: auto;    
 }
+
+.light-text {
+    color: #fff;
+}
+
+.align-center {
+    text-align: center;
+}
+
+.align-right {
+    text-align: right;
+}
+
+.align-left {
+    text-align: left;
+}
+
