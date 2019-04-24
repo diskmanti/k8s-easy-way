@@ -112,7 +112,7 @@
     <notes>shpjego rreth labels dhe si nderveprojne me services</notes>
   </div>
 
-  <div>Use Case</div>
+  <div>Sample Worklfow</div>
 
   <div><img src="./img/1-cluster.svg" alt="" style="width: auto; height: 900px;"></div>
 
@@ -144,6 +144,94 @@
     <notes>
       shpjego diagramen dhe trego cdo komponenet. mos harro reconcillation loop
     </notes>
+  </div>
+
+  <div>
+    <h2>Control Plane Componenets</h2>
+    <ul>
+      <li>kube-apiserver</li>
+      <li>etcd</li>
+      <li>kube-controller-manager</li>
+      <li>kube-scheduler</li>
+    </ul>
+  </div>
+
+  <div><img src="./img/control-plane-components.png" alt=""></div>
+
+  <div>
+    <h2>kube-apiserver</h2>
+    <ul>
+      <li>Forward facing REST interface</li>
+      <li>Interact with k8s <em>strictly</em> through API server </li>
+      <li>Cluster Gatekeeper - handle auth, req validation, etc</li>
+    </ul>
+  </div>
+
+  <div>
+    <img src="./img/etcd-logo.svg" alt="" style="width: auto; height: 200px;">
+    <ul>
+      <li>cluster datastore</li>
+      <li>key-value store for persisting cluster state</li>
+      <li>Store object and config info</li>
+    </ul>
+  </div>
+
+  <div>
+    <h2>kube-controller-manager</h2>
+    <ul>
+      <li> <i>Director behind the scenes</i> </li>
+      <li>Monitors the cluster statevia apiserver and <em>steers the cluster towards the desired state</em> </li>
+      <li>Manages all core componenets control loops</li>
+    </ul>
+    <notes>doest not schedule dhe pods, just monitors the state. scheduler does that</notes>
+  </div>
+
+  <div>
+    <h2>kube-scheduler</h2>
+    <ul>
+      <li>evaluates workload requirements</li>
+      <li>req. can include: hardware, affinity/anti-affinity, labels, etc</li>
+    </ul>
+  </div>
+
+  <div>
+    <h2>Node Componenets</h2>
+    <ul>
+      <li>kubelet</li>
+      <li>kube-proxy</li>
+      <li>container runtime engine</li>
+    </ul>
+  </div>
+
+  <div><img src="./img/node-components.png" alt=""></div>
+
+  <div>
+    <h2>kube-proxy</h2>
+    <ul>
+      <li> <em>not a proxy</em> </li>
+      <li>manages network on each node</li>
+      <li>performs connection forwarding or load balancing</li>
+    </ul>
+  </div>
+
+  <div>
+    <h2>container runtime engine</h2>
+    <ul>
+      <li>container runtime interface that executes and manages containers
+        <ul>
+          <li>containerd(docker)</li>
+          <li>cri-o</li>
+          <li>rkt(coreos)</li>
+          <li>docker</li>
+          <li>frakti</li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+
+  <div>
+    <h2>Cluster Overview</h2>
+    <img src="./img/k8s-cluser-overview.png" alt="" style="width: auto; height: 700px;">
   </div>
 
 
